@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.carre {
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+    margin: 100px auto;
+}
+
+#carre:hover {
+    -webkit-animation: turn 0.5s infinite;
+    animation: turn 0.5s infinite;
+}
+
+@-webkit-keyframes turn {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes turn {
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#stop:hover {
+    -webkit-animation: turn 0.5s;
+    animation: turn 0.5s;
+}
+
+footer {
+    background-image: url(../media/images/fond.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 60vh;
+    width: 100%;
+    position: relative;
+}
+
+#marron {
+    width: 320px;
+    height: 80px;
+    background-image: url(../media/images/panneau.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    line-height: 80px;
+}
+
+#piaf{
+    position: relative;
+    height: 140px;
+    width: 200px;
+    -webkit-transform: translate(-200px, 400px);
+    -ms-transform: translate(-200px, 400px);
+    transform: translate(-200px, 400px);
+}
+
+#piaf::after {
+    content: "BIPBIP!!";
+    opacity: 0;
+    background-color: blue;
+    color: white;
+    position: absolute;
+    right: -40px;
+    top: 20px;
+    text-align: center;
+    width: 130px;
+    font-size: xx-large;
+}
+
+#marron:hover+#piaf{
+    -webkit-animation: bipbip 5s forwards;
+    animation: bipbip 5s forwards;
+}
+
+#marron:hover+#piaf::after{
+    -webkit-animation: bip 1s forwards;
+    animation: bip 1s forwards;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+
+@-webkit-keyframes bipbip {
+    10% {-webkit-transform: translate(250px, 400px) scale(2);transform: translate(250px, 400px) scale(2);}
+    20% {-webkit-transform: translate(250px, 400px) scale(2);transform: translate(250px, 400px) scale(2);}
+    100%{ -webkit-transform: translate(4000px, 400px) scale(0.5); transform: translate(4000px, 400px) scale(0.5);}
+}
+
+@keyframes bipbip {
+    10% {-webkit-transform: translate(250px, 400px) scale(2);transform: translate(250px, 400px) scale(2);}
+    20% {-webkit-transform: translate(250px, 400px) scale(2);transform: translate(250px, 400px) scale(2);}
+    100%{ -webkit-transform: translate(4000px, 400px) scale(0.5); transform: translate(4000px, 400px) scale(0.5);}
+}
+
+@-webkit-keyframes bip {
+    0% {opacity: 1;}
+    50% {opacity: 1;}
+    100% {opacity: 0; -webkit-transform: scale(0.85); transform: scale(0.85);}
+}
+
+@keyframes bip {
+    0% {opacity: 1;}
+    50% {opacity: 1;}
+    100% {opacity: 0; -webkit-transform: scale(0.85); transform: scale(0.85);}
+}
